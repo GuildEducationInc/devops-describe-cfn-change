@@ -35,7 +35,7 @@ fi
 echo "::set-output name=change_set_name::$uuid"
 echo "::set-output name=result_file_path::$uuid.json"
 
-python .github/actions/describe-cfn-change/pretty_format.py $uuid $INPUT_STACK_NAME
+python .github/actions/describe-cfn-change-set/pretty_format.py $uuid $INPUT_STACK_NAME
 echo "::set-output name=diff_file_path::$uuid.html"
 result=$(cat $uuid.html)
 echo "::set-output name=result::$result"
