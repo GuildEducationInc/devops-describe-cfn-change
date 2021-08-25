@@ -43,7 +43,7 @@ echo "LS .github/ DIR START"
 ls .github/
 echo "LS DIRS END"
 
-python .github/actions/devops-describe-cfn-changeset/pretty_format.py $uuid $INPUT_STACK_NAME
+python pretty_format.py $uuid $INPUT_STACK_NAME
 echo "::set-output name=diff_file_path::$uuid.html"
 result=$(cat $uuid.html)
 echo "::set-output name=result::$result"
