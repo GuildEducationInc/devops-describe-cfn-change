@@ -35,6 +35,8 @@ fi
 echo "::set-output name=change_set_name::$uuid"
 echo "::set-output name=result_file_path::$uuid.json"
 
+echo "LS / DIR START"
+ls /
 echo "LS ./ DIR START"
 ls ./
 echo "LS .github/ DIR START"
