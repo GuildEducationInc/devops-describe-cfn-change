@@ -35,9 +35,11 @@ fi
 echo "::set-output name=change_set_name::$uuid"
 echo "::set-output name=result_file_path::$uuid.json"
 
-echo "LS GITHUB ACTIONS DIR START"
-ls .github/actions
-echo "LS GITHUB ACTIONS DIR END"
+echo "LS ./ DIR START"
+ls ./
+echo "LS .github/ DIR START"
+ls .github/
+echo "LS DIRS END"
 
 python .github/actions/devops-describe-cfn-changeset/pretty_format.py $uuid $INPUT_STACK_NAME
 echo "::set-output name=diff_file_path::$uuid.html"
