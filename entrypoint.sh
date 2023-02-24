@@ -32,8 +32,8 @@ if [ ${status} != "CREATE_COMPLETE" ] && [ ${status} != "FAILED" ]; then
   exit 1
 fi
 
-echo "::set-output name=change_set_name::$uuid"
-echo "::set-output name=result_file_path::$uuid.json"
+echo "change_set_name=$uuid >> $GITHUB_OUTPUT"
+echo "result_file_path=$uuid.json >> $GITHUB_OUTPUT"
 
 python /pretty_format.py $uuid $INPUT_STACK_NAME
 echo "::set-output name=diff_file_path::$uuid.html"
